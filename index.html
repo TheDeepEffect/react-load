@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/javascript">
+        function load(componentName, args, container, callback) {
+            const Component = React.createElement(eval(componentName), args);
+            ReactDOM.render(Component, container, callback);
+}
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div >test</div>
+    <div id="root"></div>
+    <script src="Like.js"
+    ></script>
+    <script src="BidComoponent.js"
+    ></script>
+    <script src="src/ChildOne.js"
+    ></script>
+    <!-- <script>
+        let count=0;
+        function increaseCount(){
+             count++
+        }
+        load("Like",{children :["Increase"],id:"button1",count},document.querySelector("#root"))
+        console.log({count});
+    </script> -->
+
+
+<div id="bid"></div>
+<script>
+    let maxBid="500";
+    function setMaxBid(value){
+        maxBid=value;
+    }
+    load("BidComponent",{currentBid:maxBid,totalBidCount:"2",buttonLabel:"Place your bid",setMaxBid},document.querySelector("#bid"))
+    // console.log({count});
+</script>
+</body>
+</html>
